@@ -88,7 +88,7 @@ export const getUpcoming = () => {
 };
 
 
-export const getTVShows = () => {
+export const getTVs = () => {
     return fetch(
         `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
     ).then((response) => {
@@ -102,7 +102,7 @@ export const getTVShows = () => {
         });
 };
 
-export const getTVShow = (args) => {
+export const getTV = (args) => {
     // console.log(args)
     const [, idPart] = args.queryKey;
     const { id } = idPart;
