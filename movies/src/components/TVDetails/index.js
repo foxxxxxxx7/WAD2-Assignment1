@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
+import TVReviews from "../TVReviews"
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -21,7 +21,7 @@ const root = {
 };
 const chip = { margin: 0.5 };
 
-const MovieDetails = ({ movie }) => {  // Don't miss this!
+const TVDetails = ({ tv }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -31,7 +31,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       </Typography>
 
       <Typography variant="h6" component="p">
-        {movie.overview}
+        {tv.overview}
       </Typography>
 
       <Paper
@@ -41,7 +41,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         <li>
           <Chip label="Genres" sx={{ ...chip }} color="primary" />
         </li>
-        {movie.genres.map((g) => (
+        {tv.genres.map((g) => (
           <li key={g.name}>
             <Chip label={g.name} sx={{ ...chip }} />
           </li>
@@ -49,16 +49,16 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       </Paper>
 
       <Paper component="ul" sx={{ ...root }}>
-        <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
+        <Chip icon={<AccessTimeIcon />} label={`${tv.runtime} min.`} />
         <Chip
           icon={<MonetizationIcon />}
-          label={`${movie.revenue.toLocaleString()}`}
+          label={`${tv.revenue.toLocaleString()}`}
         />
         <Chip
           icon={<StarRate />}
-          label={`${movie.vote_average} (${movie.vote_count}`}
+          label={`${tv.vote_average} (${tv.vote_count}`}
         />
-        <Chip label={`Released: ${movie.release_date}`} />
+        <Chip label={`Released: ${tv.release_date}`} />
       </Paper>
 
       <Paper
@@ -68,7 +68,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         <li>
           <Chip label="Production Countries" sx={{ ...chip }} color="primary" />
         </li>
-        {movie.production_countries.map((pc) => (
+        {tv.production_countries.map((pc) => (
           <li key={pc.name}>
             <Chip label={pc.name} sx={{ ...chip }} />
           </li>
@@ -89,9 +89,9 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         Reviews
       </Fab>
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <MovieReviews movie={movie} />
+        <TVReviews tv={tv} />
       </Drawer>
     </>
   );
 };
-export default MovieDetails;
+export default TVDetails;
