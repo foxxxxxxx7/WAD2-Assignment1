@@ -52,7 +52,7 @@ const TVDetails = ({ tv }) => {  // Don't miss this!
         <Chip icon={<AccessTimeIcon />} label={`${tv.runtime} min.`} />
         <Chip
           icon={<MonetizationIcon />}
-          label={`${tv.revenue.toLocaleString()}`}
+          // label={`${tv.revenue.toLocaleString()}`}
         />
         <Chip
           icon={<StarRate />}

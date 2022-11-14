@@ -23,7 +23,7 @@ const formControl =
 
 export default function FilterTVCard(props) {
 
-    const { data, error, isLoading, isError } = useQuery("genres", getGenres);
+    const { data, error, isLoading, isError } = useQuery("TVgenres", getTVGenres);
 
     if (isLoading) {
         return <Spinner />;

@@ -19,19 +19,19 @@ import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 
 
 export default function TVCard({ tv, action }) {
-    const { favorites, addToFavorites } = useContext(TVContext);
-    const { watchlist } = useContext(TVContext);
+    // const { favorites, addToFavorites } = useContext(TVContext);
+    // const { watchlist } = useContext(TVContext);
 
-    if (favorites.find((id) => id === tv.id)) {
-        tv.favorite = true;
-    } else {
-        tv.favorite = false
-    }
-    if (watchlist.find((id) => id === tv.id)) {
-        tv.watchlist = true;
-    } else {
-        tv.watchlist = false
-    }
+    // if (favorites.find((id) => id === tv.id)) {
+    //     tv.favorite = true;
+    // } else {
+    //     tv.favorite = false
+    // }
+    // if (watchlist.find((id) => id === tv.id)) {
+    //     tv.watchlist = true;
+    // } else {
+    //     tv.watchlist = false
+    // }
 
     // const handleAddToFavorite = (e) => {
     //     e.preventDefault();
@@ -41,17 +41,17 @@ export default function TVCard({ tv, action }) {
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardHeader
-                avatar={
-                    tv.favorite ? (
-                        <Avatar sx={{ backgroundColor: 'red' }}>
-                            <FavoriteIcon />
-                        </Avatar>
-                    ) : tv.watchlist ? (
-                        <Avatar sx={{ backgroundColor: 'green' }}>
-                            <PlaylistAddCheckIcon />
-                        </Avatar>
-                    ) : null
-                }
+                // avatar={
+                //     tv.favorite ? (
+                //         <Avatar sx={{ backgroundColor: 'red' }}>
+                //             <FavoriteIcon />
+                //         </Avatar>
+                //     ) : tv.watchlist ? (
+                //         <Avatar sx={{ backgroundColor: 'green' }}>
+                //             <PlaylistAddCheckIcon />
+                //         </Avatar>
+                //     ) : null
+                // }
                 title={
                     <Typography variant="h5" component="p">
                         {tv.title}{" "}
