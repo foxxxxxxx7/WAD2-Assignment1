@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PageTemplate from "../components/templateTVbListPage";
+import TVListPageTemplate from "../components/templateTVListPage";
 import { TVContext } from "../contexts/TVContext";
 import { useQueries } from "react-query";
 import { getTV } from "../api/tmdb-api";
@@ -34,7 +34,7 @@ const FavoriteTVPage = () => {
     const toDo = () => true;
 
     return (
-        <PageTemplate
+        <TVListPageTemplate
             title="Favorite TV Shows"
             tv={tv}
             action={(tv) => {

@@ -33,10 +33,10 @@ export default function TVCard({ tv, action }) {
         tv.watchlist = false
     }
 
-    const handleAddToFavorite = (e) => {
-        e.preventDefault();
-        addToFavorites(tv);
-    };
+    // const handleAddToFavorite = (e) => {
+    //     e.preventDefault();
+    //     addToFavorites(tv);
+    // };
 
     return (
         <Card sx={{ maxWidth: 345 }}>

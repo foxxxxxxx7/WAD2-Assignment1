@@ -1,5 +1,5 @@
 import React from "react";
-import PageTemplate from "../components/templateTVPage";
+import TemplateTVPage from "../components/templateTVPage";
 import TVReviewForm from "../components/TVReviewForm";
 import { useLocation } from "react-router-dom";
 import { useQuery } from "react-query";
@@ -23,9 +23,9 @@ const WriteTVReviewPage = (props) => {
         return <h1>{error.message}</h1>;
     }
     return (
-        <PageTemplate tv={tv}>
+        <TemplateTVPage tv={tv}>
             <TVReviewForm tv={tv} />
-        </PageTemplate>
+        </TemplateTVPage>
     );
 };
 

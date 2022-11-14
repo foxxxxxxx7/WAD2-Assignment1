@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
 import TVDetails from "../components/TVDetails/";
-import PageTemplate from "../components/templateTVPage";
+import TemplateTVPage from "../components/templateTVPage";
 import { getTV } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
@@ -26,9 +26,9 @@ const TVPage = (props) => {
     <>
       {tv ? (
         <>
-          <PageTemplate tv={tv}>
+          <TemplateTVPage tv={tv}>
             <TVDetails tv={tv} />
-          </PageTemplate>
+          </TemplateTVPage>
         </>
       ) : (
         <p>Waiting for TV show details</p>

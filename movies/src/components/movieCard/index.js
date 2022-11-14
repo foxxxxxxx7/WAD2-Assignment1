@@ -33,10 +33,10 @@ export default function MovieCard({ movie, action }) {
         movie.watchlist = false
     }
 
-    const handleAddToFavorite = (e) => {
-        e.preventDefault();
-        addToFavorites(movie);
-    };
+    // const handleAddToFavorite = (e) => {
+    //     e.preventDefault();
+    //     addToFavorites(movie);
+    // };
 
     return (
         <Card sx={{ maxWidth: 345 }}>

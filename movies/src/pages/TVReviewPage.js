@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import PageTemplate from "../components/templateTVPage";
+import TemplateTVPage from "../components/templateTVPage";
 import TVReview from "../components/TVReview";
 
 const TVReviewPage = (props) => {
@@ -8,9 +8,9 @@ const TVReviewPage = (props) => {
   const { tv, review } = location.state;
 
   return (
-    <PageTemplate tv={tv}>
+    <TemplateTVPage tv={tv}>
       <TVReview review={review} />
-    </PageTemplate>
+    </TemplateTVPage>
   );
 };
 
