@@ -87,6 +87,20 @@ export const getUpcoming = () => {
         });
 };
 
+export const getTopMovies = ( page ) => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=${page}`
+    ).then((response) => {
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+       throw error
+    });
+  };
+  
 
 export const getTVs = () => {
     return fetch(
@@ -163,16 +177,30 @@ export const getTVReviews = (id) => {
         });
 };
 
-export const getUpcomingTV = () => {
+// export const getUpcomingTV = () => {
+//     return fetch(
+//         `https://api.themoviedb.org/3/tv/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+//     ).then((response) => {
+//         if (!response.ok) {
+//             throw new Error(response.json().message);
+//         }
+//         return response.json();
+//     })
+//         .catch((error) => {
+//             throw error
+//         });
+// };
+
+export const getTopTV = ( page ) => {
     return fetch(
-        `https://api.themoviedb.org/3/tv/upcoming?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=${page}`
     ).then((response) => {
-        if (!response.ok) {
-            throw new Error(response.json().message);
-        }
-        return response.json();
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
     })
-        .catch((error) => {
-            throw error
-        });
-};
+    .catch((error) => {
+       throw error
+    });
+  };

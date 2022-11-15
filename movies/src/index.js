@@ -12,8 +12,14 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { createRoot } from "react-dom/client";
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
+import TopMoviesPage from "./pages/topMoviesPage";
 import TVHomePage from "./pages/TVHomePage";
 import TVPage from "./pages/TVDetailsPage";
+import TVReviewPage from "./pages/TVReviewPage";
+import UpcomingTVPage from "./pages/upcomingTVPage";
+import AddTVReviewPage from "./pages/TVReviewPage";
+import FavoriteTVPage from "./pages/favoriteTVPage";
+import TopTVPage from "./pages/topTVPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,9 +42,15 @@ const App = () => {
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/reviews/:id" element={<MovieReviewPage />} />
             <Route path="/movies/upcoming" element={<UpcomingPage />} />
+            <Route path="/movies/topMovies" element={<TopMoviesPage />} />
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
             <Route path="/tv" element={ <TVHomePage /> } />
             <Route path="/tv/:id" element={<TVPage />} />
+            <Route path="/reviews/:id" element={<TVReviewPage />} />
+            {/* <Route path="/tv/upcomingTV" element={<UpcomingTVPage />} /> */}
+            <Route path="/reviews/form" element={ <AddTVReviewPage /> } />
+            <Route path="/tv/favorites" element={<FavoriteTVPage />} />
+            <Route path="/tv/topTV" element={<TopTVPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

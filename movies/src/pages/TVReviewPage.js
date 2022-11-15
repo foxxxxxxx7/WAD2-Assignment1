@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import TemplateTVPage from "../components/templateTVPage";
-import TVReview from "../components/TVReview";
+import TVReview from "../components/TVReviews";
 
 const TVReviewPage = (props) => {
   let location = useLocation();
