@@ -85,7 +85,7 @@ const TVReviewForm = ({ tv }) => {
     };
 
     const onSubmit = (review) => {
-        review.tvId = tv.id;
+        review.TVId = tv.id;
         review.rating = rating;
         // console.log(review);
         context.addReview(tv, review);

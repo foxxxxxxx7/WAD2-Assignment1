@@ -8,13 +8,14 @@ import RemoveFromTVFavorites from "../components/cardIcons/removeFromTVFavorites
 import WriteTVReview from "../components/cardIcons/writeTVReview";
 
 const FavoriteTVPage = () => {
-    const { favorites: TVIds } = useContext(TVContext);
+    const { tvfavorites: TVIds } = useContext(TVContext);
 
+    console.log(TVIds)
     // Create an array of queries and run in parallel.
     const favoriteTVQueries = useQueries(
         TVIds.map((TVId) => {
             return {
-                queryKey: ["tv", { id: TVId }],
+                queryKey: ["favorites", { id: TVId }],
                 queryFn: getTV,
             };
         })

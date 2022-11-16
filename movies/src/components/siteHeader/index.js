@@ -29,7 +29,7 @@ const SiteHeader = ({ history }) => {
         { label: "Upcoming", path: "/movies/upcoming" },
         { label: "Top Movies", path: "/movies/topMovies" },
         { label: "TV", path: "/tv" },
-        { label: "TV Favorites", path: "/tv/TVFavorites"},
+        { label: "TV Favorites", path: "/tv/TVFavorites" },
         { label: "Top TV", path: "/tv/topTV" },
         // { label: "Upcoming TV", path: "/tv/upcomingTV"},
     ];
@@ -50,7 +50,7 @@ const SiteHeader = ({ history }) => {
                         TMDB Client
                     </Typography>
                     <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                        All you ever wanted to know about Movies!
+                        All you ever wanted to know about Movies and TV!
                     </Typography>
                     {isMobile ? (
                         <>

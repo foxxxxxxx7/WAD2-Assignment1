@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
-import TVReviews from "../TVReviews"
+import TVReview from "../TVReviews"
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -89,7 +89,7 @@ const TVDetails = ({ tv }) => {  // Don't miss this!
         Reviews
       </Fab>
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <TVReviews tv={tv} />
+        <TVReview tv={tv} />
       </Drawer>
     </>
   );
