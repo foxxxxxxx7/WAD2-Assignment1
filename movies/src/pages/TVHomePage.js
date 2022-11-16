@@ -19,11 +19,7 @@ const TVHomePage = (props) => {
     const tv = data.results;
 
     // Redundant, but necessary to avoid app crashing.
-<<<<<<< Updated upstream
-    const tvfavorites = tv.filter(m => m.tvfavorites)
-=======
     const tvfavorites = tv.filter(m => m.tvfavorite)
->>>>>>> Stashed changes
     localStorage.setItem('tvfavorites', JSON.stringify(tvfavorites))
 
     return (

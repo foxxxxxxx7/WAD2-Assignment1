@@ -6,10 +6,6 @@ const TVContextProvider = (props) => {
     const [tvfavorites, setTVFavorites] = useState([])
     const [myTVReviews, setMyTVReviews] = useState({})
     const [TVwatchlist, setTVWatchlist] = useState([])
-<<<<<<< Updated upstream
-        tvfavorites = [];
-=======
->>>>>>> Stashed changes
 
     const addToTVFavorites = (tv) => {
         let newTVFavorites = [];
