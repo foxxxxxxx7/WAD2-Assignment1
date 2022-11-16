@@ -22,6 +22,8 @@ const TVHomePage = (props) => {
     const tvfavorites = tv.filter(m => m.tvfavorite)
     localStorage.setItem('tvfavorites', JSON.stringify(tvfavorites))
 
+console.log(tvfavorites)
+
     return (
         <TemplateTVPage
             name="Discover TV Shows"

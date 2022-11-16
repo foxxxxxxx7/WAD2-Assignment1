@@ -10,22 +10,25 @@ import WriteTVReview from "../components/cardIcons/writeTVReview";
 const FavoriteTVPage = () => {
     const { tvfavorites: TVIds } = useContext(TVContext);
 
-    console.log(TVIds)
+
     // Create an array of queries and run in parallel.
     const favoriteTVQueries = useQueries(
         TVIds.map((TVId) => {
+            console.log(TVId)
             return {
                 queryKey: ["favorites", { id: TVId }],
                 queryFn: getTV,
             };
         })
     );
+    
     // Check if any of the parallel queries is still loading.
     const isLoading = favoriteTVQueries.find((m) => m.isLoading === true);
 
     if (isLoading) {
         return <Spinner />;
     }
+    console.log(TVIds)
 
     const tv = favoriteTVQueries.map((q) => {
         q.data.genre_ids = q.data.genres.map(g => g.id)
