@@ -19,6 +19,7 @@ import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 
 
 export default function TVCard({ tv, action }) {
+<<<<<<< Updated upstream
     const { tvfavorites, addToTVFavorites } = useContext(TVContext);
     const { TVwatchlist } = useContext(TVContext);
 
@@ -36,17 +37,44 @@ export default function TVCard({ tv, action }) {
     const handleAddTVToFavorite = (e) => {
         e.preventDefault();
         addToTVFavorites(tv);
+=======
+    const { tvfavorites , addToFavorites } = useContext(TVContext);
+    const { watchlist } = useContext(TVContext);
+
+    if (tvfavorites.find((id) => id === tv.id)) {
+        tv.tvfavorite = true;
+    } else {
+        tv.tvfavorite = false
+    }
+    // if (watchlist.find((id) => id === tv.id)) {
+    //     tv.watchlist = true;
+    // } else {
+    //     tv.watchlist = false
+    // }
+
+    const handleAddToFavorite = (e) => {
+        e.preventDefault();
+        addToFavorites(tv);
+>>>>>>> Stashed changes
     };
 
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardHeader
                 avatar={
+<<<<<<< Updated upstream
                     tv.tvfavorites ? (
                         <Avatar sx={{ backgroundColor: 'red' }}>
                             <FavoriteIcon />
                         </Avatar>
                     ) : tv.TVwatchlist ? (
+=======
+                    tv.favorite ? (
+                        <Avatar sx={{ backgroundColor: 'red' }}>
+                            <FavoriteIcon />
+                        </Avatar>
+                    ) : tv.watchlist ? (
+>>>>>>> Stashed changes
                         <Avatar sx={{ backgroundColor: 'green' }}>
                             <PlaylistAddCheckIcon />
                         </Avatar>
