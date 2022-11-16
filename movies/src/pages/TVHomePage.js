@@ -3,7 +3,7 @@ import { getTVs } from "../api/tmdb-api";
 import TemplateTVPage from '../components/templateTVListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
-import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
+import AddToTVFavoritesIcon from '../components/cardIcons/addToTVFavorites'
 
 const TVHomePage = (props) => {
 
@@ -19,15 +19,15 @@ const TVHomePage = (props) => {
     const tv = data.results;
 
     // Redundant, but necessary to avoid app crashing.
-    const favorites = tv.filter(m => m.favorite)
-    localStorage.setItem('favorites', JSON.stringify(favorites))
+    const tvfavorites = tv.filter(m => m.tvfavorites)
+    localStorage.setItem('tvfavorites', JSON.stringify(tvfavorites))
 
     return (
         <TemplateTVPage
             name="Discover TV Shows"
             tv={tv}
             action={(tv) => {
-                return <AddToFavoritesIcon tv={tv} />
+                return <AddToTVFavoritesIcon tv={tv} />
             }}
         />
     );

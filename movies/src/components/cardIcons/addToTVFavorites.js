@@ -6,13 +6,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 const AddToTVFavoritesIcon = ({ tv }) => {
     const context = useContext(TVContext);
 
-    const handleAddToFavorites = (e) => {
+    const handleAddTVToFavorites = (e) => {
         e.preventDefault();
-        context.addToFavorites(tv);
+        context.addToTVFavorites(tv);
     };
 
     return (
-        <IconButton aria-label="add to favorites" onClick={handleAddToFavorites}>
+        <IconButton aria-label="add to favorites" onClick={handleAddTVToFavorites}>
             <FavoriteIcon color="primary" fontSize="large" />
         </IconButton>
     );

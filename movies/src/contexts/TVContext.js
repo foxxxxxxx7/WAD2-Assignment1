@@ -3,54 +3,55 @@ import React, { useState } from "react";
 export const TVContext = React.createContext(null);
 
 const TVContextProvider = (props) => {
-    const [favorites, setFavorites] = useState([])
-    const [myReviews, setMyReviews] = useState({})
-    const [watchlist, setWatchlist] = useState([])
+    const [tvfavorites, setTVFavorites] = useState([])
+    const [myTVReviews, setMyTVReviews] = useState({})
+    const [TVwatchlist, setTVWatchlist] = useState([])
+        tvfavorites = [];
 
-    const addToFavorites = (tv) => {
-        let newFavorites = [];
-        if (!favorites.includes(tv.id)) {
-            newFavorites = [...favorites, tv.id];
+    const addToTVFavorites = (tv) => {
+        let newTVFavorites = [];
+        if (!tvfavorites.includes(tv.id)) {
+            newTVFavorites = [...tvfavorites, tv.id];
         }
         else {
-            newFavorites = [...favorites];
+            newTVFavorites = [...tvfavorites];
         }
-        setFavorites(newFavorites)
+        setTVFavorites(newTVFavorites)
     };
 
-    const addReview = (tv, review) => {
-        setMyReviews({ ...myReviews, [tv.id]: review })
+    const addTVReview = (tv, review) => {
+        setMyTVReviews({ ...myTVReviews, [tv.id]: review })
     };
     //console.log(myReviews);
 
     // We will use this function in a later section
-    const removeFromFavorites = (tv) => {
-        setFavorites(favorites.filter(
+    const removeFromTVFavorites = (tv) => {
+        setTVFavorites(tvfavorites.filter(
             (mId) => mId !== tv.id
         ))
     };
 
-    const addToWatchlist = (tv) => {
+    const addToTVWatchlist = (tv) => {
         let newEntry = [];
-        if (!watchlist.includes(tv.id)) {
-            newEntry = [...watchlist, tv.id];
+        if (!TVwatchlist.includes(tv.id)) {
+            newEntry = [...TVwatchlist, tv.id];
         }
         else {
-            newEntry = [...watchlist];
+            newEntry = [...TVwatchlist];
         }
-        setWatchlist(newEntry)
+        setTVWatchlist(newEntry)
         console.log(newEntry)
     };
 
     return (
         <TVContext.Provider
             value={{
-                favorites,
-                watchlist,
-                addToFavorites,
-                removeFromFavorites,
-                addReview,
-                addToWatchlist
+                tvfavorites,
+                TVwatchlist,
+                addToTVFavorites,
+                removeFromTVFavorites,
+                addTVReview,
+                addToTVWatchlist
             }}
         >
             {props.children}

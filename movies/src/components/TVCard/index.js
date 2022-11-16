@@ -19,39 +19,39 @@ import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 
 
 export default function TVCard({ tv, action }) {
-    // const { favorites, addToFavorites } = useContext(TVContext);
-    // const { watchlist } = useContext(TVContext);
+    const { tvfavorites, addToTVFavorites } = useContext(TVContext);
+    const { TVwatchlist } = useContext(TVContext);
 
-    // if (favorites.find((id) => id === tv.id)) {
-    //     tv.favorite = true;
-    // } else {
-    //     tv.favorite = false
-    // }
-    // if (watchlist.find((id) => id === tv.id)) {
-    //     tv.watchlist = true;
-    // } else {
-    //     tv.watchlist = false
-    // }
+    if (tvfavorites.find((id) => id === tv.id)) {
+        tv.tvfavorites = true;
+    } else {
+        tv.tvfavorites = false
+    }
+    if (TVwatchlist.find((id) => id === tv.id)) {
+        tv.TVwatchlist = true;
+    } else {
+        tv.TVwatchlist = false
+    }
 
-    // const handleAddToFavorite = (e) => {
-    //     e.preventDefault();
-    //     addToFavorites(tv);
-    // };
+    const handleAddTVToFavorite = (e) => {
+        e.preventDefault();
+        addToTVFavorites(tv);
+    };
 
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardHeader
-                // avatar={
-                //     tv.favorite ? (
-                //         <Avatar sx={{ backgroundColor: 'red' }}>
-                //             <FavoriteIcon />
-                //         </Avatar>
-                //     ) : tv.watchlist ? (
-                //         <Avatar sx={{ backgroundColor: 'green' }}>
-                //             <PlaylistAddCheckIcon />
-                //         </Avatar>
-                //     ) : null
-                // }
+                avatar={
+                    tv.tvfavorites ? (
+                        <Avatar sx={{ backgroundColor: 'red' }}>
+                            <FavoriteIcon />
+                        </Avatar>
+                    ) : tv.TVwatchlist ? (
+                        <Avatar sx={{ backgroundColor: 'green' }}>
+                            <PlaylistAddCheckIcon />
+                        </Avatar>
+                    ) : null
+                }
                 title={
                     <Typography variant="h5" component="p">
                         {tv.title}{" "}
