@@ -53,6 +53,7 @@ const App = () => {
               <Route path="/TVreviews/form" element={<AddTVReviewPage />} />
               <Route path="/tv/favorites" element={<FavoriteTVPage />} />
               <Route path="/tv/topTV" element={<TopTVPage />} />
+              <Route path="/reviews/form" element={<AddTVReviewPage />} />
               <Route path="/" element={<HomePage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
