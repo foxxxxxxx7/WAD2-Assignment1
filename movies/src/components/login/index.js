@@ -5,7 +5,6 @@ import {
     onAuthStateChanged,
     signOut,
 } from "firebase/auth";
-// import "./App.css";
 import { auth } from "../../firebase-config";
 
 export default function Login() {
@@ -19,10 +18,9 @@ export default function Login() {
     onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
     });
-
-    const register = async () => {
+const register = () => {
         try {
-            const user = await createUserWithEmailAndPassword(
+            const user = createUserWithEmailAndPassword(
                 auth,
                 registerEmail,
                 registerPassword
@@ -32,10 +30,11 @@ export default function Login() {
             console.log(error.message);
         }
     };
+    
 
-    const login = async () => {
+    const login = () => {
         try {
-            const user = await signInWithEmailAndPassword(
+            const user = signInWithEmailAndPassword(
                 auth,
                 loginEmail,
                 loginPassword
@@ -46,8 +45,8 @@ export default function Login() {
         }
     };
 
-    const logout = async () => {
-        await signOut(auth);
+    const logout = () => {
+         signOut(auth);
     };
 
     return (

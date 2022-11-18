@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getTopTV } from "../api/tmdb-api";
 import TVListPageTemplate from '../components/templateTVListPage'
 import Spinner from '../components/spinner';
-import PlaylistAddIcon from '../components/cardIcons/addToWatchlist';
+import PlaylistAddIcon from '../components/cardIcons/addToTVWatchlist';
 import { useQuery } from 'react-query';
 
 const TopTVPage = (props) => {
